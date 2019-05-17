@@ -6,7 +6,11 @@ How to run this project:
 - make sure you have npm and postgreSql in your computer
 - clone this project
 - move to this project directory
-- ``npm i``
+- ``npm install``
+- setup your own database credentials in knexfile.js
+- ``knex migrate:latest``
+- ``npm start``
+- enjoy
 
 Heroku App URL:
 https://tech-test-agung.herokuapp.com
