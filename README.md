@@ -6,7 +6,7 @@ How to run this project:
 - make sure you have npm and postgreSql in your computer
 - clone this project
 - move to this project directory
-- <code>npm i<code>
+- <code>npm i
 
 Heroku App URL:
 https://tech-test-agung.herokuapp.com
