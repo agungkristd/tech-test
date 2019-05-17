@@ -3,9 +3,21 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const { Model } = require("objection");
+const Knex = require("knex");
+const knexConfig = require("./knexfile");
+var bodyParser = require('body-parser');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var customersRouter = require('./routes/customers');
+
+const environment = process.env.NODE_ENV
+console.log("NODE_ENV env", process.env.NODE_ENV);
+
+Model.knex(Knex(knexConfig[environment]));
+
 
 var app = express();
 
@@ -19,8 +31,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/v2/customers', customersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
