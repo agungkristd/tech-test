@@ -9,6 +9,6 @@ router.get('/profile/:id_profile', customerCtrl.getProfile);
 router.post('/register', customerCtrl.register);
 
 // login
-router.get('/login', customerCtrl.login);
+router.post('/login', customerCtrl.login);
 
 module.exports = router;
