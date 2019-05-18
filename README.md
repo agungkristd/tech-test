@@ -9,7 +9,7 @@ How to run this project:
 - ``npm install``
 - setup your own database credentials in knexfile.js
 - ``knex migrate:latest``
-- ``npm start``
+- ``npm start`` and server will run on port ``9001``
 - enjoy
 
 Heroku App URL:
