@@ -13,7 +13,7 @@ const getProfile = async (req, res)=>{
             const customers = await Customer.query().findById(verify.id)
             res.status(200).json(customers);
         }else{
-            res.status(500).send({message: 'Not Authorized!'})
+            res.status(403).send({message: 'Forbidden Access!'})
         }
     } catch (err) {
         if(err.name === 'JsonWebTokenError'){
@@ -37,7 +37,7 @@ const register = async (req, res)=>{
             updated_at: moment()
         })
 
-        res.status(201).send({ message: 'registration complete!'})
+        res.status(201).send({ message: 'Registration succeed!'})
     } catch (err) {
         console.log(err)
         res.status(400).send(err)
@@ -58,7 +58,7 @@ const login = async (req, res)=>{
             });
             res.status(200).send({ customer_id: customer.customer_id, authorization: token })
         }else{
-            res.status(401).send('wrong credentials!')
+            res.status(401).send('Wrong credentials!')
         }
     } catch (err) {
         res.status(404).send(err)
