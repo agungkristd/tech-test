@@ -8,6 +8,7 @@ How to run this project:
 - move to this project directory
 - ``npm install``
 - setup your own database credentials in knexfile.js
+- make sure you have knex installed globally, if you don't, install it with ``npm i -g knex``
 - ``knex migrate:latest``
 - ``npm start`` and server will run on port ``9001``
 - enjoy
