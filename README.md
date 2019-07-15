@@ -5,7 +5,7 @@ Agung Kristianto
 How to run this project:
 - make sure you have npm and postgreSql in your computer
 - clone this project
-- move to this project directory
+- ``cd to-this-project-dir`` 
 - ``npm install``
 - setup your own database credentials in knexfile.js
 - make sure you have knex installed globally, if you don't, install it with ``npm i -g knex``
